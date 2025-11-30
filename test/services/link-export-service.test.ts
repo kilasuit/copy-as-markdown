@@ -21,7 +21,7 @@ import type {
 
 // Simple mock markdown formatter for tests
 const mockMarkdown: MarkdownFormatter = {
-  escapeLinkText: (text: string) => text.replace(/\[/g, '\\[').replace(/\]/g, '\\]'),
+  escapeLinkText: (text: string) => text.replace(/\\/g, '\\\\').replace(/\[/g, '\\[').replace(/\]/g, '\\]'),
   linkTo: (title: string, url: string) => `[${title}](${url})`,
   list: vi.fn().mockImplementation(() => {
     throw new Error('list() should not be called in link export tests');
