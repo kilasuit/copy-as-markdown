@@ -82,7 +82,7 @@ describe('link Export Service - Pure Functions', () => {
         'Test [Link]',
         'https://example.com',
         '1',
-        text => text.replace(/\[/g, '\\[').replace(/\]/g, '\\]'),
+        text => text.replace(/\\/g, '\\\\').replace(/\[/g, '\\[').replace(/\]/g, '\\]'),
         mockProvider,
       );
 
@@ -108,7 +108,7 @@ describe('link Export Service - Pure Functions', () => {
         '[Special]',
         'https://example.com',
         '1',
-        text => text.replace(/\[/g, '\\[').replace(/\]/g, '\\]'),
+        text => text.replace(/\\/g, '\\\\').replace(/\[/g, '\\[').replace(/\]/g, '\\]'),
         mockProvider,
       );
 
